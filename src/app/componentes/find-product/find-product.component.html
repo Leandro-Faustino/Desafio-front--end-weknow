@@ -1,0 +1,22 @@
+<div class="container text-center mt-4 w-75">
+
+  <h1 class="h3">Recuparar um Produto</h1>
+    <form [formGroup]="formulario" (ngSubmit)="recuperarProduto()">
+  <div class="input-group ">
+      <input type="text" class="form-control" formControlName="id" placeholder="Digite o id do Produto" aria-label="digite um id" aria-describedby="button-addon2">
+      <button class="btn btn-warning btn " type="submit"  [disabled]="!formulario.valid" id="button-addon2">Recuperar</button>
+    </div>
+  </form>
+    <div class="card mb-4" *ngIf="produtoRecupeardo$ | async ,else  Error">
+           <div class="card-body d-flex w-100" *ngFor="let produtos of produtoRecupeardo$ | async">
+            <div class="w-50">id: {{produtos.id}}</div>
+            <div class="w-50">Descrição: {{produtos.descricao}}</div>
+          </div>
+        </div>
+        <ng-template class="mb-3" #Error>
+          <div class="text-danger" *ngIf="error$ | async; else vazio">Erro ao Recuperar um produtos,tente novamente</div>
+              </ng-template>
+             <ng-template class="mb-4" #vazio>
+        </ng-template>
+          </div>
+

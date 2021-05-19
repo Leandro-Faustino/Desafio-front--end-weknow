@@ -1,27 +1,40 @@
 # TestWeknow
+Este projeto consiste em criar,recuperar,atualizar e deletar produtos de uma Api;
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
 
-## Development server
+## Rodando o projeto
+### Faça o clone do diretório para seu diretório:
+$ git clone https://github.com/Leandro-Faustino/Desafio-front--end-weknow
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Instale ad dependências do projeto
+$ npm install
 
-## Code scaffolding
+### Rode json-server que simula uma api
+$ yarn json
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### rode o angular
+$ ng serve
 
-## Build
+### ferremantas usadas
+Html,scss,javascript[Angular]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Rotas
+Adicionar um novo Produto:
+> POST http://localhost:3000/projetos
 
-## Running unit tests
+Recuperar um produto existente
+> GET http://localhost:3000/projetos/:id
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Atualizar dados de um produto existente
+> PUT http://localhost:3000/projetos/:id
 
-## Running end-to-end tests
+Remover um produto existente
+> DELETE http://localhost:3000/projetos/:id
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Listar todos os produtos existentes
+> GET http://localhost:3000/projetos
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+

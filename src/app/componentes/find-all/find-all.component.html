@@ -1,0 +1,17 @@
+<div  class="container  mt-4 w-75">
+  <h1 class="h3 text-center">Listar todos Produtos</h1>
+  <div class="mb-3">
+    <button type="submit" (click)="findAll()" class="btn btn-warning ">Listar</button>
+  </div>
+  <div class="card mb-4" *ngIf="todosProdutos$ | async,else Error">
+           <div class="card-body d-flex w-100" *ngFor="let produtos of todosProdutos$ | async">
+          <div class="w-50">id: {{produtos.id}}</div>
+          <div class="w-50">descrição: {{produtos.descricao}}</div>
+        </div>
+      </div>
+</div>
+<ng-template #Error>
+  <div class="text-danger" *ngIf="error$ | async; else vazio">Erro ao recuperar produtos ou não existe nenhum produto cadastrado,tente novamente!</div>
+      </ng-template>
+     <ng-template #vazio>
+     </ng-template>
