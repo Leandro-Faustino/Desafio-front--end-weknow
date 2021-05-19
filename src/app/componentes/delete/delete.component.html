@@ -1,16 +1,32 @@
 <div class="container text-center mt-4 w-75">
-
   <h1 class="h3">Deletar um Produto</h1>
-  <form  [formGroup]="formulario" (ngSubmit)="deletarProduto()">
+  <form [formGroup]="formulario" (ngSubmit)="deletarProduto()">
     <div class="input-group">
-    <input type="text" class="form-control" formControlName="id" placeholder="Insira o id do Produto" aria-label="Deletar Produto" aria-describedby="button-addon2">
-    <button class="btn btn-warning" type="submit"  [disabled]="!formulario.valid"  id="button-addon2">Remover</button>
-      </div>
-      <div *ngIf="produtodeletado$ | async,else error">Produto deletado com sucesso!</div>
-</form>
-<ng-template #error>
-  <div class="text-danger" *ngIf="error$ | async; else vazio">Erro ao deletar o produto ou produto não existe,tente novamente!</div>
-      </ng-template>
-     <ng-template #vazio>
-     </ng-template>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="id"
+        placeholder="Insira o id do Produto"
+        aria-label="Deletar Produto"
+        aria-describedby="button-addon2"
+      />
+      <button
+        class="btn btn-warning"
+        type="submit"
+        [disabled]="!formulario.valid"
+        id="button-addon2"
+      >
+        Remover
+      </button>
     </div>
+    <div *ngIf="produtodeletado$ | async; else error">
+      Produto deletado com sucesso!
+    </div>
+  </form>
+  <ng-template #error>
+    <div class="text-danger" *ngIf="error$ | async; else vazio">
+      Erro ao deletar o produto ou produto não existe,tente novamente!
+    </div>
+  </ng-template>
+  <ng-template #vazio> </ng-template>
+</div>
